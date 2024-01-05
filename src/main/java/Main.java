@@ -32,15 +32,17 @@ public class Main {
             if (scanner.hasNextDouble()) {
                 double cost = scanner.nextDouble();
                 calculator.tovarName(tovar, cost);
-                System.out.println("Если желаете заказать что-то ещё, напишите любой символ \n" + "Если желаете закончить заказ, напишите \"Завершить\"");
+                System.out.println("Если желаете заказать что-то ещё, напишите любой символ. \n" + "Если желаете закончить заказ, напишите \"Завершить\".");
             }
             else {
-                System.out.println("Введено некорректное значение цены товара, пожалуйста, повторите ввод");
+                System.out.println("Введено некорректное значение цены товара, пожалуйста, повторите заказ.");
             }
             String nextVvod = scanner.next();
             if (nextVvod.equalsIgnoreCase("Завершить")) {
+                //String tovar1 = "";
+               // calculator.removeLastChar(tovar1);
                 calculator.check(howMany);
-                System.out.println(calculator.price());
+                System.out.println(calculator.price(howMany));
                 break;
             }
         }
